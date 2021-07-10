@@ -123,6 +123,11 @@ Modificador: navegacion__enlace--activo, es lo mismo que el elemento, pero tendr
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    /*
+    column-gap: 2rem;
+    row-gap: 2rem;
+    */
+    gap: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -133,21 +138,68 @@ Modificador: navegacion__enlace--activo, es lo mismo que el elemento, pero tendr
 
 /*Productos*/
 .producto {
-
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
 }
 
 .producto__imagen {
-
-}
-
-.producto__informacion {
-
+    width: 100%;
 }
 
 .producto__nombre {
-
+    font-size: 4rem;
 }
 
 .producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
 
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2; /*interlineado*/
+}
+
+/*Graficos de camisas (Imágenes en grande)*/
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.grafico--camisas {
+    /*Para ver dónde colocarlo ver las líneas en el inspector a través de grid*/
+    display: grid;
+    grid-row: 2 / 3; /*Que se posicione del renglón 2 al 3*/
+    /*grid-column: 1 / 3; /*Que se posicione de la columna 1 a la 3*/ /*Lo comento porque se puede poner en el bloque grafico*/
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+    /*grid-column: 1 / 3; Lo comento porque se puede poner en el bloque grafico*/
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/*Nosotros*/
+.nosotros {
+    display: grid;
+    
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
