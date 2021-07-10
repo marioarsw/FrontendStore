@@ -193,13 +193,38 @@ Modificador: navegacion__enlace--activo, es lo mismo que el elemento, pero tendr
 }
 
 /*Nosotros*/
-.nosotros {
+.nosotros,
+.nosotros--texto {
     display: grid;
-    
+}
+
+.nosotros {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.nosotros--img {
+    margin: 0 auto;
+}
+
+.nosotros--texto {
+    margin: 1rem 3rem;
 }
 
 @media (min-width: 768px) {
     .nosotros {
         grid-template-columns: repeat(2, 1fr);
     }
+    .nosotros--texto {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        line-height: 1.4; /*interlineado*/
+        margin: 0;
+        margin-left: 3rem;
+    }
+}
+
+.icons {
+    /*display: grid;*/
+    display: flex;
+    justify-content: space-evenly;
 }
